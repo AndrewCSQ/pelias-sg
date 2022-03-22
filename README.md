@@ -5,7 +5,7 @@
 This project is configured to download/prepare/build a complete Pelias installation for Singapore, based loosely around [the official Pelias Singapore project](https://github.com/pelias/docker/tree/master/projects/singapore). Enhancements:
 
 - Using a Singapore-specific (as opposed to SG-Msia-Brunei) OSM extract from [BBBike](https://download.bbbike.org/osm/bbbike/Singapore/)
-- Including road information from Singapore Land Authority's (SLA) [national mapline on GovTech's datamall](https://data.gov.sg/dataset/national-map-line)
+- Including road information from Singapore Land Authority's (SLA) [national mapline on GovTech's datamall](https://data.gov.sg/dataset/national-map-line) [TODO]
 - Including geo-encoding information from SLA's [OneMap API](https://www.onemap.gov.sg/docs/#onemap-rest-apis) as a custom `.csv` dataset
 
 In particular, we use the OneMap API to:

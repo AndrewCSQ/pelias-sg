@@ -1,1 +1,7 @@
+# ignore .DS_STORE for macOS users
 .DS_STORE
+
+# exclude everything in logs
+logs/*
+# exception to the rule
+!logs/.gitkeep 

@@ -122,7 +122,7 @@ all_address <- bind_rows(lta, mall, moe, onemap) %>%
     # have the address be an alias in case we search the building name
     # in the address layer
     # bracket the address so that pelias importer loads it properly
-    mutate(ADDRESS = paste0("[", ADDRESS, "]")) %>%
+    mutate(ADDRESS = paste0('["', ADDRESS, '"]')) %>%
     rename(name_json = ADDRESS) %>%
     select(name, name_json, source, layer, lat, lon) %>%
     distinct()

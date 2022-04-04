@@ -2,6 +2,8 @@
 rm(list = ls())
 
 # load required libraries
+# data.table for faster binding of rows
+library(data.table)
 # for URL encoding
 library(utils)
 # for JSON interaction
@@ -158,10 +160,12 @@ onemap_dump <- mclapply(
     queries,
     onemap_wrapper,
     mc.cores = nc
-) %>% bind_rows()
+)
+
+onemap_dump_df <- rbindlist(onemap_dump)
 
 # save all the datasets
 write_csv(lta, "data/geocoded/lta-station-info-geo.csv")
 write_csv(moe, "data/geocoded/moe-school-directory-geo.csv")
 write_csv(malls, "data/geocoded/mall-list-geo.csv")
-write_csv(onemap_dump, "data/geocoded/onemap-postal-dump.csv")
+write_csv(onemap_dump_df, "data/geocoded/onemap-postal-dump.csv")
